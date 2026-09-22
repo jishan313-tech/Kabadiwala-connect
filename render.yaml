@@ -2,6 +2,7 @@ services:
   - type: web
     name: kabadiwala-connect-api
     runtime: docker
+    plan: free
     rootDir: backend
     dockerfilePath: ./Dockerfile
     healthCheckPath: /actuator/health

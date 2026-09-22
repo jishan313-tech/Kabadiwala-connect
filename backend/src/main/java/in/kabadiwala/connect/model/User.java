@@ -1,0 +1,3 @@
+package in.kabadiwala.connect.model;
+import org.springframework.data.annotation.*; import org.springframework.data.mongodb.core.index.*; import org.springframework.data.mongodb.core.mapping.Document; import java.time.Instant;
+@Document("users") public class User { @Id public String id; @Indexed(unique=true,sparse=true) public String mobile; @Indexed(unique=true,sparse=true) public String email; public String passwordHash; public String fullName; public Role role; public String language="hi"; public boolean mobileVerified; public String recyclerStatus; @CreatedDate public Instant createdAt; @LastModifiedDate public Instant updatedAt; }

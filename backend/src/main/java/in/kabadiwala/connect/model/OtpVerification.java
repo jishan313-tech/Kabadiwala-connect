@@ -1,0 +1,2 @@
+package in.kabadiwala.connect.model; import org.springframework.data.annotation.Id; import org.springframework.data.mongodb.core.index.Indexed; import org.springframework.data.mongodb.core.mapping.Document; import java.time.Instant;
+@Document("otp_verifications") public class OtpVerification { @Id public String id; @Indexed public String mobile; public String purpose; public String otpHash; public Instant expiresAt; public int attempts; public Instant lastSentAt; public boolean verified; }

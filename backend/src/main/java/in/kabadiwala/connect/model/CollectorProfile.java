@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.model; import org.springframework.data.annotation.Id; import org.springframework.data.mongodb.core.index.Indexed; import org.springframework.data.mongodb.core.mapping.Document; @Document("collector_profiles") public class CollectorProfile {@Id public String id; @Indexed(unique=true) public String userId; public String address,city,state,pincode;}

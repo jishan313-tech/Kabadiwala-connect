@@ -1,0 +1,2 @@
+package in.kabadiwala.connect.model; import org.springframework.data.annotation.*; import org.springframework.data.mongodb.core.index.Indexed; import org.springframework.data.mongodb.core.mapping.Document; import java.time.Instant; import java.util.Map;
+@Document("audit_logs") public class AuditLog { @Id public String id; @Indexed public String actorId; @Indexed public String action; public String entityType,entityId,previousStatus,newStatus; public Map<String,Object> metadata; @CreatedDate public Instant createdAt; }

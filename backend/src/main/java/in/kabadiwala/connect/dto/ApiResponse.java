@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.dto; import java.time.Instant; public record ApiResponse<T>(boolean success,String message,T data,Instant timestamp){ public static <T> ApiResponse<T> ok(String m,T d){return new ApiResponse<>(true,m,d,Instant.now());} }

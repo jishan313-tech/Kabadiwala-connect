@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.SystemSetting; import org.springframework.data.mongodb.repository.MongoRepository; public interface SystemSettingRepository extends MongoRepository<SystemSetting,String>{}

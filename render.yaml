@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: kabadiwala-connect-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: SMS_PROVIDER
+        value: development
+      - key: STORAGE_PROVIDER
+        value: local
+      - key: PAYMENT_PROVIDER
+        value: manual
+      - key: BOOTSTRAP_ADMIN_MOBILE
+        sync: false
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
+
+  - type: web
+    name: kabadiwala-connect
+    runtime: static
+    rootDir: frontend-final
+    buildCommand: npm ci --no-audit --no-fund && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_BASE_URL
+        sync: false
+      - key: VITE_RAZORPAY_KEY_ID
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+

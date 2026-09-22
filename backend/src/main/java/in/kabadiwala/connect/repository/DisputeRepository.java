@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.Dispute; import org.springframework.data.mongodb.repository.MongoRepository; public interface DisputeRepository extends MongoRepository<Dispute,String>{}

@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.service; import in.kabadiwala.connect.dto.AuthDtos.*; public interface AuthService {String sendOtp(OtpRequest r);void verifyOtp(OtpVerify r);Token register(Register r);Token login(Login r);Token refresh(String token);void logout(String userId,String refreshToken);void resetPassword(String mobile,String otp,String newPassword);}

@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.StoredDocument; import org.springframework.data.mongodb.repository.MongoRepository; public interface StoredDocumentRepository extends MongoRepository<StoredDocument,String>{ java.util.List<StoredDocument> findByOwnerId(String ownerId); }

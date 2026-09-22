@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.MaterialCategory; import org.springframework.data.mongodb.repository.MongoRepository; public interface MaterialCategoryRepository extends MongoRepository<MaterialCategory,String>{ java.util.List<MaterialCategory> findByActiveTrue(); java.util.Optional<MaterialCategory> findByCode(String code);}

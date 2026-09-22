@@ -1,0 +1,8 @@
+target
+.env
+.settings
+.classpath
+.project
+uploads
+.mvn/apache-maven-*
+

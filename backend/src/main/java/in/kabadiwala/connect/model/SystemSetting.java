@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.model; import org.springframework.data.annotation.Id; import org.springframework.data.mongodb.core.index.Indexed; import org.springframework.data.mongodb.core.mapping.Document; @Document("system_settings") public class SystemSetting {@Id public String id; @Indexed(unique=true) public String key; public String value; public String description;}

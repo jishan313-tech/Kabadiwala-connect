@@ -1,0 +1,1 @@
+import{test,expect}from'@playwright/test';test('login surface and registration route are reachable',async({page})=>{await page.goto('/login');await expect(page.getByRole('heading')).toContainText('कबाड़ीवाला');await page.getByRole('link',{name:/नया खाता/}).click();await expect(page).toHaveURL(/register/);await expect(page.getByText('हिन्दी')).toBeVisible()});

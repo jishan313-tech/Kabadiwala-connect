@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.HandoverRecord; import org.springframework.data.mongodb.repository.MongoRepository; public interface HandoverRecordRepository extends MongoRepository<HandoverRecord,String>{ java.util.Optional<HandoverRecord> findByLotId(String lotId);}

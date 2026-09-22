@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.repository; import in.kabadiwala.connect.model.CollectorProfile; import org.springframework.data.mongodb.repository.MongoRepository; public interface CollectorProfileRepository extends MongoRepository<CollectorProfile,String>{ java.util.Optional<CollectorProfile> findByUserId(String userId);}

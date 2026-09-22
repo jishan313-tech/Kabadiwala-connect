@@ -1,0 +1,1 @@
+package in.kabadiwala.connect.integration; import in.kabadiwala.connect.model.Payment; import java.util.Map; public interface PaymentProvider {String name(); Map<String,Object> initiate(Payment p); boolean verify(String orderId,String paymentId,String signature);}

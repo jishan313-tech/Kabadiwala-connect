@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+MVN_VERSION=3.9.11
+BASE="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/.mvn/apache-maven-$MVN_VERSION"
+if [ ! -x "$BASE/bin/mvn" ]; then
+  command -v curl >/dev/null 2>&1 || { echo 'curl is required for first Maven Wrapper bootstrap'; exit 1; }
+  mkdir -p "$(dirname "$BASE")"; TMP="${TMPDIR:-/tmp}/apache-maven-$MVN_VERSION-bin.tar.gz"
+  curl -fL "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/$MVN_VERSION/apache-maven-$MVN_VERSION-bin.tar.gz" -o "$TMP"
+  tar -xzf "$TMP" -C "$(dirname "$BASE")"
+fi
+exec "$BASE/bin/mvn" "$@"
